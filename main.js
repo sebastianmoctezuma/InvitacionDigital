@@ -32,9 +32,9 @@
   function draw() {
     ctx.clearRect(0, 0, W, H);
     const grad = ctx.createRadialGradient(W / 2, H / 2, 0, W / 2, H / 2, Math.max(W, H) * 0.8);
-    grad.addColorStop(0, 'rgba(20,14,2,1)');
-    grad.addColorStop(0.5, 'rgba(10,8,4,1)');
-    grad.addColorStop(1, 'rgba(2,2,2,1)');
+    grad.addColorStop(0, 'rgba(61,0,18,1)');
+    grad.addColorStop(0.5, 'rgba(32,0,8,1)');
+    grad.addColorStop(1, 'rgba(14,0,4,1)');
     ctx.fillStyle = grad;
     ctx.fillRect(0, 0, W, H);
 

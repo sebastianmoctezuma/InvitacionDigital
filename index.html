@@ -1,201 +1,203 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sweet Sixteen · Arlene</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
 
-<!-- Fondos animados -->
-<canvas id="bg-canvas"></canvas>
-<canvas id="sparkle-canvas"></canvas>
-<div class="petals-layer" id="petals"></div>
+  <!-- Fondos animados -->
+  <canvas id="bg-canvas"></canvas>
+  <canvas id="sparkle-canvas"></canvas>
+  <div class="petals-layer" id="petals"></div>
 
-<!-- ══════════════════════════════════════
-     SECCIÓN 1 — HERO
-══════════════════════════════════════ -->
-<section class="section section-hero">
-  <div class="hero-inner">
-    <div class="photo-frame">
-      <img src="Imagenes/ChatGPT Image 29 abr 2026, 06_36_27 p.m..png" alt="Arlene - Sweet Sixteen" />
-      <div class="ss-badge">✦ SWEET SIXTEEN ✦</div>
+  <!-- ══════════════════════════════════════
+       SECCIÓN 1 — HERO (Full Bleed)
+  ══════════════════════════════════════ -->
+  <section class="section section-hero">
+
+    <!-- Foto que cubre toda la pantalla -->
+    <div class="hero-bg">
+      <img class="hero-full-img"
+           src="Imagenes/ChatGPT Image 29 abr 2026, 06_36_27 p.m..png"
+           alt="Arlene Y. Garcia - Sweet Sixteen" />
+      <div class="hero-overlay"></div>
     </div>
+
+    <!-- Texto anclado en la parte inferior -->
+    <div class="hero-content">
+      <p class="hero-ss-label">✦ &nbsp; Sweet Sixteen &nbsp; ✦</p>
+      <h1 class="hero-name-main">Arlene Y. Garcia</h1>
+      <p class="hero-event-date">30 · Mayo · 2026</p>
+    </div>
+
+    <!-- Indicador de scroll -->
     <div class="scroll-hint">
       <span>Desliza hacia abajo</span>
       <div class="scroll-arrow"></div>
     </div>
-  </div>
-</section>
 
-<!-- ══════════════════════════════════════
+  </section>
+
+  <!-- ══════════════════════════════════════
      SECCIÓN 2 — INVITACIÓN
 ══════════════════════════════════════ -->
-<section class="section section-invite reveal">
-  <div class="section-inner">
-    <p class="tag-line word-reveal">✦ &nbsp; Invitación Especial &nbsp; ✦</p>
-    <div class="divider"></div>
-    <p class="invite-text word-reveal">
-      Con todo el amor de nuestros corazones,
-    </p>
-    <p class="parents-names char-reveal reveal-child" style="--delay:0.2s">
-      Julián García &amp; Marlen Delgado
-    </p>
-    <p class="invite-text word-reveal reveal-child" style="--delay:0.35s">
-      tienen el honor de invitarte a celebrar<br/>
-      el dulce dieciséis de nuestra hija
-    </p>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════
-     SECCIÓN 3 — NOMBRE
-══════════════════════════════════════ -->
-<section class="section section-name reveal">
-  <div class="section-inner">
-    <div class="name-arlene char-reveal">Arlene</div>
-    <p class="sweet-16-label word-reveal">— Sweet Sixteen —</p>
-    <div class="age-ring reveal-child" style="--delay:0.3s">
-      <span class="age-num">16</span>
-      <span class="age-text">años</span>
+  <section class="section section-invite reveal">
+    <div class="section-inner">
+      <p class="tag-line word-reveal">✦ &nbsp; Invitación Especial &nbsp; ✦</p>
+      <div class="divider"></div>
+      <p class="invite-text word-reveal">
+        Con todo el amor de nuestros corazones,
+      </p>
+      <p class="parents-names char-reveal reveal-child" style="--delay:0.2s">
+        Julián García &amp; Marlen Delgado
+      </p>
+      <p class="invite-text word-reveal reveal-child" style="--delay:0.35s">
+        tienen el honor de invitarte a celebrar<br />
+        el dulce dieciséis de nuestra hija
+      </p>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ══════════════════════════════════════
+
+  <!-- ══════════════════════════════════════
      SECCIÓN 4 — DETALLES DEL EVENTO
 ══════════════════════════════════════ -->
-<section class="section section-details reveal">
-  <div class="section-inner">
-    <p class="tag-line word-reveal">✦ &nbsp; Detalles del Evento &nbsp; ✦</p>
-    <div class="divider"></div>
+  <section class="section section-details reveal">
+    <div class="section-inner">
+      <p class="tag-line word-reveal">✦ &nbsp; Detalles del Evento &nbsp; ✦</p>
+      <div class="divider"></div>
 
-    <div class="detail-card reveal-child" style="--delay:0.1s">
-      <div class="detail-icon">📅</div>
-      <div class="detail-body">
-        <div class="detail-label">Fecha</div>
-        <div class="detail-value">30 de Mayo, 2026</div>
+      <div class="detail-card reveal-child" style="--delay:0.1s">
+        <div class="detail-icon">📅</div>
+        <div class="detail-body">
+          <div class="detail-label">Fecha</div>
+          <div class="detail-value">30 de Mayo, 2026</div>
+        </div>
+      </div>
+
+      <div class="detail-card reveal-child" style="--delay:0.2s">
+        <div class="detail-icon">🕖</div>
+        <div class="detail-body">
+          <div class="detail-label">Hora</div>
+          <div class="detail-value">7:00 PM – 12:00 AM</div>
+        </div>
+      </div>
+
+      <div class="detail-card reveal-child" style="--delay:0.3s">
+        <div class="detail-icon">🏛️</div>
+        <div class="detail-body">
+          <div class="detail-label">Salón</div>
+          <div class="detail-value">ALGO VIP EVENT CENTER &amp; LOUNGE</div>
+        </div>
+      </div>
+
+      <div class="detail-card reveal-child" style="--delay:0.4s">
+        <div class="detail-icon">📍</div>
+        <div class="detail-body">
+          <div class="detail-label">Dirección</div>
+          <div class="detail-value">704 E Griffin Pkwy, Mission, TX 78572</div>
+        </div>
+      </div>
+
+      <!-- MAPA EMBEBIDO -->
+      <div class="map-embed-wrap reveal-child" style="--delay:0.55s">
+        <iframe class="map-iframe"
+          src="https://maps.google.com/maps?q=704+E+Griffin+Pkwy,+Mission,+TX+78572&z=15&output=embed"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Ubicación ALGO VIP EVENT CENTER"></iframe>
+        <a class="map-btn" href="https://maps.google.com/?q=704+E+Griffin+Pkwy,+Mission,+TX+78572" target="_blank"
+          rel="noopener">
+          <span>📍</span> Abrir en Google Maps
+        </a>
       </div>
     </div>
+  </section>
 
-    <div class="detail-card reveal-child" style="--delay:0.2s">
-      <div class="detail-icon">🕖</div>
-      <div class="detail-body">
-        <div class="detail-label">Hora</div>
-        <div class="detail-value">7:00 PM – 12:00 AM</div>
-      </div>
-    </div>
-
-    <div class="detail-card reveal-child" style="--delay:0.3s">
-      <div class="detail-icon">🏛️</div>
-      <div class="detail-body">
-        <div class="detail-label">Salón</div>
-        <div class="detail-value">ALGO VIP EVENT CENTER &amp; LOUNGE</div>
-      </div>
-    </div>
-
-    <div class="detail-card reveal-child" style="--delay:0.4s">
-      <div class="detail-icon">📍</div>
-      <div class="detail-body">
-        <div class="detail-label">Dirección</div>
-        <div class="detail-value">704 E Griffin Pkwy, Mission, TX 78572</div>
-      </div>
-    </div>
-
-    <!-- MAPA EMBEBIDO -->
-    <div class="map-embed-wrap reveal-child" style="--delay:0.55s">
-      <iframe
-        class="map-iframe"
-        src="https://maps.google.com/maps?q=704+E+Griffin+Pkwy,+Mission,+TX+78572&z=15&output=embed"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        title="Ubicación ALGO VIP EVENT CENTER"></iframe>
-      <a class="map-btn"
-         href="https://maps.google.com/?q=704+E+Griffin+Pkwy,+Mission,+TX+78572"
-         target="_blank" rel="noopener">
-        <span>📍</span> Abrir en Google Maps
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════
+  <!-- ══════════════════════════════════════
      SECCIÓN 5 — CUENTA REGRESIVA
 ══════════════════════════════════════ -->
-<section class="section section-countdown reveal" id="countdown-section">
-  <div class="section-inner">
-    <p class="tag-line word-reveal">✦ &nbsp; Cuenta Regresiva &nbsp; ✦</p>
-    <div class="divider"></div>
-    <div class="countdown-grid">
-      <div class="countdown-item">
-        <span class="countdown-num" id="cd-days">00</span>
-        <div class="countdown-label">Días</div>
-      </div>
-      <div class="countdown-item">
-        <span class="countdown-num" id="cd-hours">00</span>
-        <div class="countdown-label">Horas</div>
-      </div>
-      <div class="countdown-item">
-        <span class="countdown-num" id="cd-mins">00</span>
-        <div class="countdown-label">Minutos</div>
-      </div>
-      <div class="countdown-item">
-        <span class="countdown-num" id="cd-secs">00</span>
-        <div class="countdown-label">Segundos</div>
+  <section class="section section-countdown reveal" id="countdown-section">
+    <div class="section-inner">
+      <p class="tag-line word-reveal">✦ &nbsp; Cuenta Regresiva &nbsp; ✦</p>
+      <div class="divider"></div>
+      <div class="countdown-grid">
+        <div class="countdown-item">
+          <span class="countdown-num" id="cd-days">00</span>
+          <div class="countdown-label">Días</div>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-num" id="cd-hours">00</span>
+          <div class="countdown-label">Horas</div>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-num" id="cd-mins">00</span>
+          <div class="countdown-label">Minutos</div>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-num" id="cd-secs">00</span>
+          <div class="countdown-label">Segundos</div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ══════════════════════════════════════
+  <!-- ══════════════════════════════════════
      SECCIÓN 6 — REGALO
 ══════════════════════════════════════ -->
-<section class="section section-gift reveal">
-  <div class="section-inner">
-    <div class="gift-icon-wrap reveal-child" style="--delay:0.05s">
-      <div class="gift-icon">🎁</div>
-    </div>
-    <p class="tag-line word-reveal reveal-child" style="--delay:0.15s">✦ &nbsp; Un Detalle de tu Corazón &nbsp; ✦</p>
-    <div class="divider reveal-child" style="--delay:0.2s"></div>
-    <p class="gift-text word-reveal reveal-child" style="--delay:0.25s">
-      Tu presencia es, sin duda, el mejor regalo.<br/>
-      Sin embargo, si deseas honrar este momento<br/>
-      especial con un obsequio, será recibido<br/>
-      con todo el amor y la gratitud de nuestra familia.
-    </p>
-
-    <div class="gift-cards reveal-child" style="--delay:0.4s">
-      <div class="gift-card">
-        <div class="gift-card-icon">💳</div>
-        <div class="gift-card-title">Mesa de Regalos</div>
-        <div class="gift-card-desc">Si prefieres dar un regalo en efectivo o tarjeta de regalo, con gusto lo recibiremos en el evento.</div>
+  <section class="section section-gift reveal">
+    <div class="section-inner">
+      <div class="gift-icon-wrap reveal-child" style="--delay:0.05s">
+        <div class="gift-icon">🎁</div>
       </div>
-      <div class="gift-card">
-        <div class="gift-card-icon">✨</div>
-        <div class="gift-card-title">Lo más importante</div>
-        <div class="gift-card-desc">Celebrar juntos este momento único en la vida de Arlene. ¡Tu presencia hace la diferencia!</div>
+      <p class="tag-line word-reveal reveal-child" style="--delay:0.15s">✦ &nbsp; Un Detalle de tu Corazón &nbsp; ✦</p>
+      <div class="divider reveal-child" style="--delay:0.2s"></div>
+      <p class="gift-text word-reveal reveal-child" style="--delay:0.25s">
+        Tu presencia es, sin duda, el mejor regalo.<br />
+        Sin embargo, si deseas honrar este momento<br />
+        especial con un obsequio, será recibido<br />
+        con todo el amor y la gratitud de nuestra familia.
+      </p>
+
+      <div class="gift-cards reveal-child" style="--delay:0.4s">
+        <div class="gift-card">
+          <div class="gift-card-icon">💳</div>
+          <div class="gift-card-title">Mesa de Regalos</div>
+          <div class="gift-card-desc">Si prefieres dar un regalo en efectivo o tarjeta de regalo, con gusto lo
+            recibiremos en el evento.</div>
+        </div>
+        <div class="gift-card">
+          <div class="gift-card-icon">✨</div>
+          <div class="gift-card-title">Lo más importante</div>
+          <div class="gift-card-desc">Celebrar juntos este momento único en la vida de Arlene. ¡Tu presencia hace la
+            diferencia!</div>
+        </div>
       </div>
+
+      <p class="gift-closing reveal-child" style="--delay:0.55s">
+        Con amor,<br />
+        <em>La Familia García Delgado</em>
+      </p>
     </div>
+  </section>
 
-    <p class="gift-closing reveal-child" style="--delay:0.55s">
-      Con amor,<br/>
-      <em>La Familia García Delgado</em>
+  <!-- FOOTER -->
+  <footer class="site-footer reveal">
+    <div class="divider"></div>
+    <p class="footer-text">
+      &ldquo; La vida es una fiesta — ¡celebrémosla juntos! &rdquo;
     </p>
-  </div>
-</section>
+    <p class="footer-date">30 · Mayo · 2026</p>
+  </footer>
 
-<!-- FOOTER -->
-<footer class="site-footer reveal">
-  <div class="divider"></div>
-  <p class="footer-text">
-    &ldquo; La vida es una fiesta — ¡celebrémosla juntos! &rdquo;
-  </p>
-  <p class="footer-date">30 · Mayo · 2026</p>
-</footer>
-
-<script src="main.js"></script>
+  <script src="main.js"></script>
 </body>
+
 </html>

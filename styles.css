@@ -9,15 +9,17 @@
   --gold-dark: #8b6914;
   --gold-glow: rgba(201,168,76,0.45);
   --white: #fdfaf3;
-  --black: #0a0a0a;
-  --card-bg: rgba(10,8,4,0.82);
+  --black: #200008;        /* vino tinto profundo */
+  --wine-mid: #3d0012;     /* vino tinto medio */
+  --card-bg: rgba(42,0,14,0.88);
 }
 
 html { scroll-behavior: smooth; }
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background: var(--black);
+  background: linear-gradient(160deg, #200008 0%, #3d0012 50%, #200008 100%);
+  background-attachment: fixed;
   color: var(--white);
   overflow-x: hidden;
 }
@@ -60,7 +62,7 @@ body {
   width: 100%;
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
-  padding: 90px 24px;
+  padding: 56px 24px;
 }
 .section-inner {
   width: 100%; max-width: 580px;
@@ -132,88 +134,130 @@ body {
 }
 
 /* ═══════════════════════════════════════════
-   SECCIÓN HERO
+   SECCIÓN HERO — FULL BLEED
 ═══════════════════════════════════════════ */
-.section-hero { min-height: 100svh; padding: 0; }
-.hero-inner {
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
+.section-hero {
+  position: relative;
   min-height: 100svh;
-  padding: 60px 20px 44px;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;  /* contenido anclado al fondo */
 }
 
-.photo-frame {
-  position: relative;
-  width: 300px; height: 410px;
-  animation: hero-zoom-in 1.4s cubic-bezier(0.16,1,0.3,1) both;
+/* Foto que cubre toda la pantalla */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
 }
+.hero-full-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* Gradiente overlay — transparente arriba, vino tinto abajo */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.02) 0%,
+    rgba(0,0,0,0.05) 35%,
+    rgba(32,0,8,0.65) 58%,
+    rgba(32,0,8,0.92) 75%,
+    rgba(32,0,8,1) 100%
+  );
+}
+
+/* Contenido de texto sobre la foto */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 28px 48px;
+  width: 100%;
+  animation: hero-fade-up 1.2s cubic-bezier(0.16,1,0.3,1) 0.4s both;
+}
+@keyframes hero-fade-up {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-ss-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem; letter-spacing: 0.48em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
+.hero-name-main {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3.2rem, 14vw, 5.5rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.05;
+  color: var(--white);
+  text-shadow: 0 2px 30px rgba(0,0,0,0.6);
+  margin-bottom: 14px;
+  letter-spacing: 0.02em;
+}
+
+.hero-event-date {
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem; letter-spacing: 0.38em;
+  color: var(--gold-light);
+  text-transform: uppercase;
+  text-shadow: 0 2px 14px rgba(0,0,0,0.5);
+}
+
 @keyframes hero-zoom-in {
   from { opacity: 0; transform: scale(0.72); }
   to   { opacity: 1; transform: scale(1); }
 }
 
-.photo-frame::before, .photo-frame::after {
-  content: ''; position: absolute; border-radius: 14px;
-  animation: pulse-border 3s ease-in-out infinite;
-}
-.photo-frame::before { inset: -7px; border: 2px solid var(--gold); animation-delay: 0s; }
-.photo-frame::after  { inset: -17px; border: 1px solid rgba(201,168,76,0.28); animation-delay: 1.5s; }
-@keyframes pulse-border {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50%       { opacity: 0.3; transform: scale(1.022); }
-}
-
-.photo-frame img {
-  width: 100%; height: 100%;
-  object-fit: cover; border-radius: 12px; display: block;
-  box-shadow: 0 0 90px rgba(201,168,76,0.38), 0 28px 70px rgba(0,0,0,0.9);
-}
-
-.ss-badge {
-  position: absolute; bottom: -26px; left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light), var(--gold));
-  background-size: 200% 200%;
-  animation: shimmer 3s ease infinite;
-  color: var(--black);
-  font-family: 'Cinzel', serif;
-  font-size: 0.72rem; font-weight: 700;
-  letter-spacing: 0.32em;
-  padding: 9px 26px; border-radius: 30px;
-  white-space: nowrap;
-  box-shadow: 0 6px 30px var(--gold-glow);
-}
-
 .scroll-hint {
-  margin-top: 64px;
+  position: absolute;      /* anclado al fondo del hero full-bleed */
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
   display: flex; flex-direction: column; align-items: center; gap: 10px;
   animation: fade-in 1s ease 1.8s both;
 }
 .scroll-hint span {
   font-family: 'Cinzel', serif;
   font-size: 0.6rem; letter-spacing: 0.35em;
-  color: rgba(201,168,76,0.55); text-transform: uppercase;
+  color: rgba(201,168,76,0.7); text-transform: uppercase;
 }
 .scroll-arrow {
   width: 24px; height: 24px;
   border-right: 2px solid var(--gold); border-bottom: 2px solid var(--gold);
   transform: rotate(45deg);
   animation: bounce-down 1.4s ease-in-out infinite;
-  opacity: 0.55;
+  opacity: 0.7;
 }
 @keyframes bounce-down {
   0%, 100% { transform: rotate(45deg) translateY(0); }
   50%       { transform: rotate(45deg) translateY(7px); }
 }
 @keyframes fade-in {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
 
 /* ═══════════════════════════════════════════
    SECCIÓN INVITACIÓN
 ═══════════════════════════════════════════ */
-.section-invite { min-height: 60vh; }
+.section-invite { min-height: auto; }
 
 .tag-line {
   font-family: 'Cinzel', serif;
@@ -240,7 +284,7 @@ body {
 /* ═══════════════════════════════════════════
    SECCIÓN NOMBRE
 ═══════════════════════════════════════════ */
-.section-name { min-height: 60vh; gap: 16px; }
+.section-name { min-height: auto; gap: 16px; }
 
 .name-arlene {
   font-family: 'Cinzel', serif;
@@ -288,7 +332,7 @@ body {
 /* ═══════════════════════════════════════════
    SECCIÓN DETALLES
 ═══════════════════════════════════════════ */
-.section-details { min-height: 60vh; }
+.section-details { min-height: auto; }
 
 .detail-card {
   width: 100%; max-width: 500px;
@@ -359,7 +403,7 @@ body {
 /* ═══════════════════════════════════════════
    SECCIÓN COUNTDOWN
 ═══════════════════════════════════════════ */
-.section-countdown { min-height: 50vh; }
+.section-countdown { min-height: auto; }
 
 .countdown-grid {
   display: grid; grid-template-columns: repeat(4, 1fr);
@@ -407,7 +451,7 @@ body {
 /* ═══════════════════════════════════════════
    SECCIÓN REGALO
 ═══════════════════════════════════════════ */
-.section-gift { min-height: 70vh; }
+.section-gift { min-height: auto; }
 
 .gift-icon { font-size: 4rem; animation: gift-float 3s ease-in-out infinite; filter: drop-shadow(0 0 20px rgba(201,168,76,0.55)); }
 @keyframes gift-float {
