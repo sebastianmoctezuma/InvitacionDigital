@@ -193,7 +193,7 @@ body {
 
 .hero-ss-label {
   font-family: 'Cinzel', serif;
-  font-size: 0.68rem; letter-spacing: 0.48em;
+  font-size: 0.85rem; letter-spacing: 0.48em;
   color: var(--gold);
   text-transform: uppercase;
   margin-bottom: 10px;
@@ -202,7 +202,7 @@ body {
 
 .hero-name-main {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(3.2rem, 14vw, 5.5rem);
+  font-size: clamp(3.8rem, 16vw, 6.2rem);
   font-weight: 300;
   font-style: italic;
   line-height: 1.05;
@@ -320,10 +320,12 @@ body {
 
 .parents-names {
   font-family: 'Cinzel', serif;
-  font-size: 1.45rem; font-weight: 600;
+  font-size: clamp(1.1rem, 5vw, 1.55rem);
+  font-weight: 600;
   color: var(--gold-light); letter-spacing: 0.07em;
   margin: 12px 0 20px;
   text-shadow: 0 0 40px rgba(201,168,76,0.45);
+  white-space: nowrap;
 }
 
 /* ═══════════════════════════════════════════
@@ -598,5 +600,4 @@ body {
   .detail-card { padding: 18px 16px; gap: 16px; }
   .map-iframe { height: 220px; }
   .invite-text { font-size: 1.25rem; }
-  .parents-names { font-size: 1.2rem; }
 }
