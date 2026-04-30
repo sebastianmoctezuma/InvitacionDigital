@@ -11,7 +11,41 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body>
+<body class="no-scroll">
+
+  <!-- ══════════════════════════════════════
+       OVERLAY DE BIENVENIDA (SOBRE ANIMADO)
+  ══════════════════════════════════════ -->
+  <div id="welcome-overlay" class="welcome-overlay">
+    <div class="envelope-wrapper" id="open-invite-btn">
+      <div class="envelope">
+        <div class="envelope-flap"></div>
+        <div class="envelope-paper">
+          <div class="paper-content">
+            <p class="paper-names">Arlene</p>
+            <p class="paper-date">30 . 05 . 2026</p>
+          </div>
+        </div>
+        <div class="envelope-front"></div>
+        <div class="wax-seal">A</div>
+      </div>
+      <p class="envelope-hint">Presiona el sobre para abrir</p>
+    </div>
+  </div>
+
+  <!-- CONTROL DE MÚSICA Y AUDIO -->
+  <button id="music-btn" class="music-btn hidden" aria-label="Reproducir música">
+    <div class="music-bars">
+      <span class="bar bar-1"></span>
+      <span class="bar bar-2"></span>
+      <span class="bar bar-3"></span>
+      <span class="bar bar-4"></span>
+    </div>
+  </button>
+  <audio id="bg-music" loop preload="auto">
+    <!-- Aquí pondrás tu MP3 cuando lo tengas -->
+    <!-- <source src="musica.mp3" type="audio/mpeg"> -->
+  </audio>
 
   <!-- Fondos animados -->
   <canvas id="bg-canvas"></canvas>
@@ -59,8 +93,11 @@
         Julián García &amp; Marlen Delgado
       </p>
       <p class="invite-text word-reveal reveal-child" style="--delay:0.35s">
-        tienen el honor de invitarte a celebrar<br />
-        los sweet Sixteen de nuestra hija
+        Tienen el honor de invitarte a celebrar<br />
+        los 16 años de su querida hija Arlen
+      </p>
+      <p class="invite-text word-reveal reveal-child" style="--delay:0.45s">
+        Acompáñanos a compartir este momento tan especial lleno de alegría, música y momentos inolvidables
       </p>
     </div>
   </section>
@@ -158,12 +195,6 @@
       </div>
       <p class="tag-line word-reveal reveal-child" style="--delay:0.15s">✦ &nbsp; Un Detalle de tu Corazón &nbsp; ✦</p>
       <div class="divider reveal-child" style="--delay:0.2s"></div>
-      <p class="gift-text word-reveal reveal-child" style="--delay:0.25s">
-        Tu presencia es, sin duda, el mejor regalo.<br />
-        Sin embargo, si deseas honrar este momento<br />
-        especial con un obsequio, será recibido<br />
-        con todo el amor y la gratitud de nuestra familia.
-      </p>
 
       <!-- Segunda foto con marco dorado -->
       <div class="photo-frame photo-frame--sm reveal-child" style="--delay:0.45s">

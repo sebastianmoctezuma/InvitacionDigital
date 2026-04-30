@@ -1,4 +1,45 @@
 /* ══════════════════════════════════════
+   OVERLAY Y MÚSICA
+══════════════════════════════════════ */
+(function () {
+  const overlay = document.getElementById('welcome-overlay');
+  const openBtn = document.getElementById('open-invite-btn');
+  const musicBtn = document.getElementById('music-btn');
+  const bgMusic = document.getElementById('bg-music');
+
+  // Asegurar volumen suave
+  bgMusic.volume = 0.5;
+
+  openBtn.addEventListener('click', () => {
+    // 1. Añadir clase open para iniciar la animación 3D del sobre
+    openBtn.classList.add('open');
+    
+    // 2. Esperar a que la tarjeta salga del sobre antes de ocultar todo
+    setTimeout(() => {
+      overlay.classList.add('hidden');
+      document.body.classList.remove('no-scroll');
+      musicBtn.classList.remove('hidden');
+
+      bgMusic.play().then(() => {
+        musicBtn.classList.add('playing');
+      }).catch(err => {
+        console.log('Esperando MP3 válido o interacción: ', err);
+      });
+    }, 1200); // 1.2 segundos de delay
+  });
+
+  musicBtn.addEventListener('click', () => {
+    if (bgMusic.paused) {
+      bgMusic.play();
+      musicBtn.classList.add('playing');
+    } else {
+      bgMusic.pause();
+      musicBtn.classList.remove('playing');
+    }
+  });
+})();
+
+/* ══════════════════════════════════════
    PARTICLE BACKGROUND
 ══════════════════════════════════════ */
 (function () {
