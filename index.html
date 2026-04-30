@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sweet Sixteen · Arlene</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- Animated particle background -->
+<canvas id="bg-canvas"></canvas>
+<canvas class="sparkle-canvas" id="sparkle-canvas"></canvas>
+
+<!-- Falling petals -->
+<div class="petals-layer" id="petals"></div>
+
+<div class="page">
+
+  <!-- ── HERO PHOTO ── -->
+  <div class="hero fade-up" style="animation-delay:0.1s">
+    <div class="photo-frame">
+      <img src="Imagenes/ChatGPT Image 29 abr 2026, 06_36_27 p.m..png" alt="Arlene - Sweet Sixteen" />
+      <div class="ss-badge">✦ SWEET SIXTEEN ✦</div>
+    </div>
+
+    <div class="divider"></div>
+  </div>
+
+  <!-- ── INVITATION CARD ── -->
+  <div class="invite-card">
+    <p class="tag-line">✦ &nbsp; Invitación Especial &nbsp; ✦</p>
+
+    <p class="invite-text">
+      Con todo el amor de nuestros corazones,<br/>
+      <strong>Julián García &amp; Marlen Delgado</strong><br/>
+      tienen el honor de invitarte a celebrar<br/>
+      el dulce dieciséis de nuestra hija
+    </p>
+
+    <div class="name-arlene">Arlene</div>
+    <p class="sweet-16-label">— Sweet Sixteen —</p>
+
+    <div class="divider" style="margin-top:0; margin-bottom:0;"></div>
+
+    <div class="info-grid" style="margin-top:32px;">
+      <div class="info-block">
+        <div class="info-icon">🕖</div>
+        <div class="info-label">Hora</div>
+        <div class="info-value">7:00 PM – 12:00 AM</div>
+      </div>
+      <div class="info-block">
+        <div class="info-icon">📅</div>
+        <div class="info-label">Fecha</div>
+        <div class="info-value">30 de Mayo, 2026</div>
+      </div>
+      <div class="info-block full">
+        <div class="info-icon">🏛️</div>
+        <div class="info-label">Salón</div>
+        <div class="info-value" style="font-size:1.05rem; font-weight:600;">ALGO VIP EVENT CENTER &amp; LOUNGE</div>
+      </div>
+      <div class="info-block full">
+        <div class="info-icon">📍</div>
+        <div class="info-label">Dirección</div>
+        <div class="info-value">704 E Griffin Pkwy, Mission, TX 78572</div>
+      </div>
+    </div>
+
+    <a class="map-btn" href="https://maps.google.com/?q=704+E+Griffin+Pkwy,+Mission,+TX+78572" target="_blank" rel="noopener">
+      <span>📍</span> Ver en el Mapa
+    </a>
+  </div>
+
+  <!-- ── COUNTDOWN ── -->
+  <div class="countdown-section fade-up" style="animation-delay:0.5s" id="countdown-section">
+    <p class="countdown-title">✦ &nbsp; Cuenta Regresiva &nbsp; ✦</p>
+    <div class="countdown-grid">
+      <div class="countdown-item">
+        <span class="countdown-num" id="cd-days">00</span>
+        <div class="countdown-label">Días</div>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-num" id="cd-hours">00</span>
+        <div class="countdown-label">Horas</div>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-num" id="cd-mins">00</span>
+        <div class="countdown-label">Minutos</div>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-num" id="cd-secs">00</span>
+        <div class="countdown-label">Segundos</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer fade-up" style="animation-delay:0.8s">
+    &ldquo; La vida es una fiesta — ¡celebrémosla juntos! &rdquo;
+  </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
