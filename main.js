@@ -98,8 +98,10 @@
     sparks = sparks.filter(s => s.life > 0);
     sparks.forEach(s => {
       s.x += s.vx; s.y += s.vy; s.vy += 0.06; s.life -= s.decay;
+      const r = s.r * s.life;
+      if (r <= 0) return;          // evita radio negativo → IndexSizeError
       ctx.beginPath();
-      ctx.arc(s.x, s.y, s.r * s.life, 0, Math.PI * 2);
+      ctx.arc(s.x, s.y, r, 0, Math.PI * 2);
       ctx.fillStyle = `rgba(201,168,76,${s.life * 0.85})`;
       ctx.fill();
     });

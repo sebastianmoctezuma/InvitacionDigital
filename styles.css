@@ -138,12 +138,13 @@ body {
 ═══════════════════════════════════════════ */
 .section-hero {
   position: relative;
+  height: 100svh;          /* fuerza altura exacta en desktop y mobile */
   min-height: 100svh;
   padding: 0;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;  /* contenido anclado al fondo */
+  justify-content: flex-end;
 }
 
 /* Foto que cubre toda la pantalla */
