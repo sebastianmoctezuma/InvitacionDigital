@@ -13,7 +13,7 @@
   openBtn.addEventListener('click', () => {
     // 1. Añadir clase open para iniciar la animación 3D del sobre
     openBtn.classList.add('open');
-    
+
     // 2. Esperar a que la tarjeta salga del sobre antes de ocultar todo
     setTimeout(() => {
       overlay.classList.add('hidden');

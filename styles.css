@@ -936,7 +936,7 @@ body.no-scroll {
   width: 320px;
   height: 220px;
   background: var(--wine-mid);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
   z-index: 1;
 }
 
@@ -945,7 +945,7 @@ body.no-scroll {
   position: absolute;
   inset: 0;
   z-index: 3;
-  width: 0; 
+  width: 0;
   height: 0;
   border-left: 160px solid #2e000d;
   border-right: 160px solid #2e000d;
@@ -957,9 +957,9 @@ body.no-scroll {
 /* Solapa superior */
 .envelope-flap {
   position: absolute;
-  top: 0; 
+  top: 0;
   left: 0;
-  width: 0; 
+  width: 0;
   height: 0;
   border-left: 160px solid transparent;
   border-right: 160px solid transparent;
@@ -986,7 +986,7 @@ body.no-scroll {
   font-family: 'Cinzel', serif;
   color: #ffcccc;
   font-size: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5), inset 0 0 5px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), inset 0 0 5px rgba(0, 0, 0, 0.3);
   transition: opacity 0.3s ease;
 }
 
@@ -1005,7 +1005,7 @@ body.no-scroll {
   align-items: center;
   justify-content: center;
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .paper-content {
@@ -1047,14 +1047,18 @@ body.no-scroll {
 /* ANIMACIÓN DE APERTURA */
 .envelope-wrapper.open .envelope-flap {
   transform: rotateX(180deg);
-  z-index: 1; /* Pasa atrás de la tarjeta */
+  z-index: 1;
+  /* Pasa atrás de la tarjeta */
 }
+
 .envelope-wrapper.open .wax-seal {
   opacity: 0;
 }
+
 .envelope-wrapper.open .envelope-paper {
   transform: translateY(-80px);
 }
+
 .envelope-wrapper.open .envelope-hint {
   opacity: 0;
 }
@@ -1096,30 +1100,20 @@ body.no-scroll {
   box-shadow: 0 4px 25px rgba(201, 168, 76, 0.3);
 }
 
-.music-bars {
-  display: flex;
-  align-items: flex-end;
-  gap: 3px;
-  height: 18px;
+.music-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--gold-light);
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 0 5px rgba(201, 168, 76, 0.5));
 }
 
-.music-bars .bar {
-  width: 3px;
-  background-color: var(--gold-light);
-  border-radius: 3px;
-  height: 20%;
-  transition: height 0.2s ease;
+.music-btn.playing #icon-play {
+  display: none;
 }
 
-/* Animación cuando la música suena */
-.music-btn.playing .bar-1 { animation: sound 1.2s infinite ease-in-out alternate; }
-.music-btn.playing .bar-2 { animation: sound 1.4s infinite ease-in-out alternate 0.2s; }
-.music-btn.playing .bar-3 { animation: sound 1.1s infinite ease-in-out alternate 0.4s; }
-.music-btn.playing .bar-4 { animation: sound 1.3s infinite ease-in-out alternate 0.1s; }
-
-@keyframes sound {
-  0% { height: 20%; }
-  100% { height: 100%; }
+.music-btn:not(.playing) #icon-pause {
+  display: none;
 }
 
 /* ═══════════════════════════════════════════
