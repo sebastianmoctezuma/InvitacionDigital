@@ -314,6 +314,71 @@ body.no-scroll {
   height: 280px;
 }
 
+/* Contenedor para la galería de fotos */
+.photo-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 36px;
+  margin: 28px auto 32px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* ═══════════════════════════════════════════
+   GALERÍA DÚO ELEGANTE (Senior Touch)
+═══════════════════════════════════════════ */
+.elegant-duo-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin: 40px auto 50px;
+  position: relative;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.duo-photo {
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+}
+
+.duo-photo .photo-frame {
+  margin: 0;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.8), 0 0 30px rgba(201, 168, 76, 0.2);
+}
+
+.duo-photo-left,
+.duo-photo-right {
+  transform: none;
+  z-index: 1;
+}
+
+.duo-photo:hover {
+  z-index: 10;
+  transform: scale(1.08) translateY(-8px);
+}
+
+@media (max-width: 480px) {
+  .elegant-duo-gallery {
+    gap: 16px;
+  }
+  .duo-photo .photo-frame--sm {
+    width: 155px;
+    height: 215px;
+  }
+  .duo-photo-left,
+  .duo-photo-right {
+    transform: none;
+  }
+}
+
+.photo-gallery .photo-frame {
+  margin: 0;
+}
+
 .photo-frame::before,
 .photo-frame::after {
   content: '';
@@ -718,7 +783,7 @@ body.no-scroll {
 }
 
 .gift-icon {
-  font-size: 4rem;
+  font-size: 5.2rem;
   animation: gift-float 3s ease-in-out infinite;
   filter: drop-shadow(0 0 20px rgba(201, 168, 76, 0.55));
 }
